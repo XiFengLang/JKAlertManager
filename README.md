@@ -1,6 +1,6 @@
-# JKAlertManager--高度封装UIAlertController
-
-使用`UIAlertController`时，每个AlertAction对应一个Block，经常写重复代码,`JKAlertManage`r将`UIAlertController`分散的ActionBlcok集中到一个Blcok中，精简代码，多个AlertAction时效果会更明显，能减少很多代码。
+# JKAlertManager--高度封装UIAlertController的管理类
+------
+使用`UIAlertController`时，每个AlertAction对应一个Block，经常写重复代码,`JKAlertManager`将`UIAlertController`分散的ActionBlcok集中到一个Blcok中，精简代码，多个AlertAction时效果会更明显，能减少很多代码。
 > * 兼容UIAlertControllerStyleAlert和UIAlertControllerStyleActionSheet
 > * UIAlertControllerStyleActionSheet类型可兼容iPad中的PopoverController
 > * 不会有内存泄露，有效规避Block循环引用
