@@ -1,0 +1,3 @@
+# JKAlertManager
+高度封装UIAlertController,少些很多代码。
+Demo附带我以前封装的UIAlertView和UIActionSheet分类。
