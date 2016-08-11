@@ -5,6 +5,7 @@
 > * 不会有内存泄露，有效规避Block循环引用
 > * 支持多个UITextField，以及监听多个UITextField的内容变化。
 
+ ![image](https://github.com/XiFengLang/JKAlertManager/blob/master/JKAlertManager/JKAlertManagerVideo.gif)
 ------
 
 如果仍使用`IAlertView和UIActionSheet`，可以用Demo中的的UIAlertView和UIActionSheet分类来精简代码,详情见后面的介绍。
@@ -70,6 +71,8 @@
         [strongSelf performSelector:@selector(removeFromSuperview)];
     };
 ```
+
+ ![image](https://github.com/XiFengLang/JKAlertManager/blob/master/JKAlertManager/ScreenShot01.png) ![image](https://github.com/XiFengLang/JKAlertManager/blob/master/JKAlertManager/ScreenShot02.png) ![image](https://github.com/XiFengLang/JKAlertManager/blob/master/JKAlertManager/ScreenShot03.png)
 
 ------
 如果控制器使用到多个`IAlertView或者UIActionSheet`，那么需要在多个地方创建对象并设置`delegate和tag`，然后集中在一个代理方法中先根据tag区分对象，再区分`buttonIndex`，这样写的代码比较分散，可视性不强。
