@@ -68,8 +68,15 @@ NS_CLASS_AVAILABLE_IOS(8_0) @interface JKAlertManager : UIView
 - (void)configuePopoverControllerForActionSheetStyleWithSourceView:(UIView *)sourceView sourceRect:(CGRect)sourceRect popoverArrowDirection:(UIPopoverArrowDirection)popoverArrowDirection NS_AVAILABLE_IOS(8_0);
 
 
-/**    需要用到textField时调用    */
-- (void)addTextFieldWithPlaceholder:(NSString *)placeholder secureTextEntry:(BOOL)secureTextEntry ConfigurationHandler:(void (^)(UITextField *textField))configurationHandler textFieldTextChanged:(JKAlertTextFieldTextChangedBlock)textFieldTextChanged;
+/**
+ *  需要用到textField时调用,2个Block ConfigurationHandler/textFieldTextChanged都可为nil
+ *
+ *  @param placeholder          占位字符
+ *  @param secureTextEntry      是否使用密文输入
+ *  @param configurationHandler TextField配置Block，可nil
+ *  @param textFieldTextChanged TextField内容变化的Block，可nil
+ */
+- (void)addTextFieldWithPlaceholder:(NSString *)placeholder secureTextEntry:(BOOL)secureTextEntry ConfigurationHandler:(void (^)(UITextField *textField))configurationHandler textFieldTextChanged:(JKAlertTextFieldTextChangedBlock)textFieldTextChanged NS_AVAILABLE_IOS(8_0);
 
 
 /**  不用担心self和JKAlertManager产生循环引用，方法内部会解除Block循环引用

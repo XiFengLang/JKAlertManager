@@ -120,6 +120,7 @@ typedef void(^JKAlertManagerBlock)(NSInteger actionIndex, NSString * actionTitle
     
     [controller presentViewController:self.alertController animated:YES completion:nil];
     
+    // 解除Block循环引用，释放内存
     __weak typeof(self) weakSelf = self;
     self.privateBlock = ^(NSInteger actionIndex, NSString * actionTitle){
         __strong typeof(weakSelf) strongSelf = weakSelf;
