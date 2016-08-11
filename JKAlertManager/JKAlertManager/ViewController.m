@@ -203,7 +203,6 @@ NSString * const JKCellKey = @"UITableViewCellReuseKey";
 
 - (void)pushAction{
     UIStoryboard *mainStory = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    //获取Main.storyboard中的第2个视图
     ViewController * controller = [mainStory instantiateViewControllerWithIdentifier:@"ViewController"];
     [self.navigationController pushViewController:controller animated:YES];
 }

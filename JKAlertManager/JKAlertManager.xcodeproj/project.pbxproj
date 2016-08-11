@@ -13,9 +13,9 @@
 		9FFBC2421D5B27BE0040B061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFBC2401D5B27BE0040B061 /* Main.storyboard */; };
 		9FFBC2441D5B27BE0040B061 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FFBC2431D5B27BE0040B061 /* Assets.xcassets */; };
 		9FFBC2471D5B27BE0040B061 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFBC2451D5B27BE0040B061 /* LaunchScreen.storyboard */; };
-		9FFBC2501D5B28960040B061 /* JKAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFBC24F1D5B28960040B061 /* JKAlertManager.m */; };
 		9FFBC2551D5B3B8C0040B061 /* UIActionSheet+BlockExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFBC2521D5B3B8C0040B061 /* UIActionSheet+BlockExtension.m */; };
 		9FFBC2561D5B3B8C0040B061 /* UIAlertView+BlockExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFBC2541D5B3B8C0040B061 /* UIAlertView+BlockExtension.m */; };
+		9FFBC25C1D5C34DD0040B061 /* JKAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFBC25B1D5C34DD0040B061 /* JKAlertManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,12 +29,12 @@
 		9FFBC2431D5B27BE0040B061 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FFBC2461D5B27BE0040B061 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FFBC2481D5B27BE0040B061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9FFBC24E1D5B28960040B061 /* JKAlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKAlertManager.h; sourceTree = "<group>"; };
-		9FFBC24F1D5B28960040B061 /* JKAlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKAlertManager.m; sourceTree = "<group>"; };
 		9FFBC2511D5B3B8C0040B061 /* UIActionSheet+BlockExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+BlockExtension.h"; sourceTree = "<group>"; };
 		9FFBC2521D5B3B8C0040B061 /* UIActionSheet+BlockExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+BlockExtension.m"; sourceTree = "<group>"; };
 		9FFBC2531D5B3B8C0040B061 /* UIAlertView+BlockExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+BlockExtension.h"; sourceTree = "<group>"; };
 		9FFBC2541D5B3B8C0040B061 /* UIAlertView+BlockExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+BlockExtension.m"; sourceTree = "<group>"; };
+		9FFBC25A1D5C34DD0040B061 /* JKAlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKAlertManager.h; sourceTree = "<group>"; };
+		9FFBC25B1D5C34DD0040B061 /* JKAlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKAlertManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,8 +71,7 @@
 				9FFBC23B1D5B27BE0040B061 /* AppDelegate.m */,
 				9FFBC23D1D5B27BE0040B061 /* ViewController.h */,
 				9FFBC23E1D5B27BE0040B061 /* ViewController.m */,
-				9FFBC24E1D5B28960040B061 /* JKAlertManager.h */,
-				9FFBC24F1D5B28960040B061 /* JKAlertManager.m */,
+				9FFBC2591D5C34DD0040B061 /* JKAlertManager */,
 				9FFBC2511D5B3B8C0040B061 /* UIActionSheet+BlockExtension.h */,
 				9FFBC2521D5B3B8C0040B061 /* UIActionSheet+BlockExtension.m */,
 				9FFBC2531D5B3B8C0040B061 /* UIAlertView+BlockExtension.h */,
@@ -92,6 +91,15 @@
 				9FFBC2381D5B27BE0040B061 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		9FFBC2591D5C34DD0040B061 /* JKAlertManager */ = {
+			isa = PBXGroup;
+			children = (
+				9FFBC25A1D5C34DD0040B061 /* JKAlertManager.h */,
+				9FFBC25B1D5C34DD0040B061 /* JKAlertManager.m */,
+			);
+			path = JKAlertManager;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -164,10 +172,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9FFBC2501D5B28960040B061 /* JKAlertManager.m in Sources */,
 				9FFBC2561D5B3B8C0040B061 /* UIAlertView+BlockExtension.m in Sources */,
 				9FFBC23F1D5B27BE0040B061 /* ViewController.m in Sources */,
 				9FFBC23C1D5B27BE0040B061 /* AppDelegate.m in Sources */,
+				9FFBC25C1D5C34DD0040B061 /* JKAlertManager.m in Sources */,
 				9FFBC2551D5B3B8C0040B061 /* UIActionSheet+BlockExtension.m in Sources */,
 				9FFBC2391D5B27BE0040B061 /* main.m in Sources */,
 			);
