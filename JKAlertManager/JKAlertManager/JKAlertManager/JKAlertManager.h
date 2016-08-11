@@ -40,6 +40,10 @@ NS_CLASS_AVAILABLE_IOS(8_0) @interface JKAlertManager : UIView
 /**    默认-2    */
 @property (nonatomic, assign, readonly)NSInteger destructiveIndex NS_AVAILABLE_IOS(8_0);
 
+@property (nullable, nonatomic, readonly) NSArray<UITextField *> *textFields NS_AVAILABLE_IOS(8_0);
+
+
+
 
 /**
  *  初始化方法JKAlertManager实例对象

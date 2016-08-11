@@ -135,6 +135,8 @@ NSString * const JKCellKey = @"UITableViewCellReuseKey";
             [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
                 NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self);
                 self.tableView.backgroundColor = [UIColor whiteColor];
+//                UITextField * userNameTextField = tempAlertManager.textFields[0];
+//                UITextField * passwordTextField = tempAlertManager.textFields[1];
             }];
             
         }break;

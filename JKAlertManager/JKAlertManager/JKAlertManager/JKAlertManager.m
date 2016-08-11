@@ -184,6 +184,9 @@ typedef void(^JKAlertManagerBlock)(NSInteger actionIndex, NSString * actionTitle
     return self.alertController.message;
 }
 
+- (NSArray<UITextField *> *)textFields{
+    return self.alertController.textFields;
+}
 
 - (NSMutableArray *)otherTitles{
     if (!_otherTitles) {
