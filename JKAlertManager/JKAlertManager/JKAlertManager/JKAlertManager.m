@@ -4,7 +4,7 @@
 //
 //  Created by 蒋鹏 on 16/8/10.
 //  Copyright © 2016年 蒋鹏. All rights reserved.
-//
+//  https://github.com/XiFengLang/JKAlertManager
 
 #import "JKAlertManager.h"
 
@@ -41,16 +41,14 @@ typedef void(^JKAlertManagerBlock)(NSInteger actionIndex, NSString * actionTitle
     return alertManager;
 }
 
-- (void)configueCancelTitle:(NSString *)cancelTitle destructiveIndex:(NSInteger)destructiveIndex otherTitles:(NSString *)otherTitle, ...NS_REQUIRES_NIL_TERMINATION{
-    self.cancelTitle = cancelTitle;
-    _destructiveIndex = destructiveIndex;
-    [self addCancelAction];
+- (void)configueCancelTitle:(NSString *)cancelTitle destructiveIndex:(NSInteger)destructiveIndex otherTitle:(NSString *)otherTitle, ...NS_REQUIRES_NIL_TERMINATION{
+
 
     //VA_LIST 是在C语言中解决变参问题的一组宏
     va_list argList;
-    
+    NSMutableArray * otherTitles = [[NSMutableArray alloc]init];
     if (otherTitle) {
-        [self.otherTitles addObject:otherTitle];
+        [otherTitles addObject:otherTitle];
         
         // VA_START宏，获取可变参数列表的第一个参数的地址,在这里是获取firstObj的内存地址,这时argList的指针 指向firstObj
         va_start(argList, otherTitle);
@@ -62,15 +60,26 @@ typedef void(^JKAlertManagerBlock)(NSInteger actionIndex, NSString * actionTitle
         // 首先 argList的内存地址指向的fristObj将对应储存的值取出,如果不为nil则判断为真,将取出的值房在数组中,
         // 并且将指针指向下一个参数,这样每次循环argList所代表的指针偏移量就不断下移直到取出nil
         while ((actionTitle = va_arg(argList, NSString*))) {
-            [self.otherTitles addObject:actionTitle];
+            [otherTitles addObject:actionTitle];
         }
-        
-        if(_destructiveIndex >= 0 && _destructiveIndex < self.otherTitles.count){
-            self.destructiveTitle = self.otherTitles[destructiveIndex];
-        }
-        [self addOtherActions];
     }
+    [self configueCancelTitle:cancelTitle destructiveIndex:destructiveIndex otherTitles:otherTitles];
 }
+
+- (void)configueCancelTitle:(NSString *)cancelTitle destructiveIndex:(NSInteger)destructiveIndex otherTitles:(NSArray *)otherTitles{
+    self.cancelTitle = cancelTitle;
+    _destructiveIndex = destructiveIndex;
+    [self addCancelAction];
+    
+    [self.otherTitles addObjectsFromArray:otherTitles];
+    if(_destructiveIndex >= 0 && _destructiveIndex < self.otherTitles.count){
+        self.destructiveTitle = self.otherTitles[destructiveIndex];
+    }
+    [self addOtherActions];
+}
+
+
+
 
 - (void)configuePopoverControllerForActionSheetStyleWithSourceView:(UIView *)sourceView sourceRect:(CGRect)sourceRect popoverArrowDirection:(UIPopoverArrowDirection)popoverArrowDirection{
     if (JK_iPad && self.alertController) {
