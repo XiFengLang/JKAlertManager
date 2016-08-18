@@ -29,8 +29,7 @@ typedef void(^JKAlertManagerBlock)(NSInteger actionIndex, NSString * actionTitle
     if (self = [super init]) {
         _cancelIndex = -1;
         _destructiveIndex = JKAlertDestructiveIndexNone;
-        self.frame = CGRectMake(0, 0, 1, 1);
-        self.backgroundColor = [UIColor clearColor];
+        self.frame = CGRectZero;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldTextDidChanged:) name:UITextFieldTextDidChangeNotification object:nil];
     }return self;
 }
@@ -123,8 +122,7 @@ typedef void(^JKAlertManagerBlock)(NSInteger actionIndex, NSString * actionTitle
 }
 
 - (void)showAlertFromController:(UIViewController *)controller actionBlock:(JKAlertActionBlock)actionBlock{
-    self.frame = CGRectMake(0, 0, 1, 1);
-    self.backgroundColor = [UIColor clearColor];
+    self.frame = CGRectZero;
     [controller.view addSubview:self];
     
     [controller presentViewController:self.alertController animated:YES completion:nil];

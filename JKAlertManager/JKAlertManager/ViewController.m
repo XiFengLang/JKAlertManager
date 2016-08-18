@@ -123,14 +123,17 @@ NSString * const JKCellKey = @"UITableViewCellReuseKey";
         case 4:{
             
             JKAlertManager * manager = [JKAlertManager alertWithPreferredStyle:UIAlertControllerStyleAlert title:self.dataArray[indexPath.row] message:self.dataArray[indexPath.row] ];
+            self.manager = manager;
             [manager configueCancelTitle:@"取消" destructiveIndex:1 otherTitle:@"其他按钮1",@"Destructive按钮",@"其他按钮2", nil];
             [manager addTextFieldWithPlaceholder:@"请输入账号" secureTextEntry:NO ConfigurationHandler:nil textFieldTextChanged:^(UITextField *textField) {
                 NSLog(@"1          %@",textField.text);
+                self.view.backgroundColor = [UIColor whiteColor];
             }];
             [manager addTextFieldWithPlaceholder:@"请输入密码" secureTextEntry:YES ConfigurationHandler:^(UITextField *textField) {
                 textField.clearsOnBeginEditing = YES;
             } textFieldTextChanged:^(UITextField *textField) {
                 NSLog(@"2   %@",textField.text);
+                self.view.backgroundColor = [UIColor whiteColor];
             }];
             [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
                 NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self);
