@@ -131,7 +131,7 @@ typedef void(^JKAlertManagerBlock)(NSInteger actionIndex, NSString * actionTitle
     __weak typeof(self) weakSelf = self;
     self.privateBlock = ^(NSInteger actionIndex, NSString * actionTitle){
         __strong typeof(weakSelf) strongSelf = weakSelf;
-        actionBlock(strongSelf, actionIndex, actionTitle);
+        if (actionBlock) actionBlock(strongSelf, actionIndex, actionTitle);
         [[NSNotificationCenter defaultCenter]removeObserver:strongSelf];
         strongSelf.alertController = nil;
         strongSelf.privateBlock = nil;
