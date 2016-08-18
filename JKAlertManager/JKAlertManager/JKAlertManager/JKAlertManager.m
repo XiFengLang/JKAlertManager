@@ -117,7 +117,7 @@ typedef void(^JKAlertManagerBlock)(NSInteger actionIndex, NSString * actionTitle
     if (self.textFieldChangedBlockMutDict.count) {
         UITextField * textField = notification.object;
         JKAlertTextFieldTextChangedBlock textChanedBlock = self.textFieldChangedBlockMutDict[[NSString stringWithFormat:@"%p",textField]];
-        textChanedBlock(textField);
+        if (textChanedBlock) textChanedBlock(textField);
     }
 }
 

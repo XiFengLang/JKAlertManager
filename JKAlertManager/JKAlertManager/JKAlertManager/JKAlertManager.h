@@ -6,6 +6,25 @@
 //  Copyright © 2016年 蒋鹏. All rights reserved.
 //  https://github.com/XiFengLang/JKAlertManager
 
+
+
+/**    代码块
+     JKAlertManager * manager = [JKAlertManager alertWithPreferredStyle:UIAlertControllerStyleAlert title:<#title#> message:<#nil#>];
+    [manager configueCancelTitle:<#@"取消"#> destructiveIndex:JKAlertDestructiveIndexNone otherTitles:<#array#>];
+    [manager showAlertFromCodwntroller:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
+        <#doSomething#>
+    }];
+
+     JKAlertManager * manager = [JKAlertManager alertWithPreferredStyle:UIAlertControllerStyleAlert title:<#title#> message:<#nil#>];
+    [manager configueCancelTitle:<#@"取消"#> destructiveIndex:<#index#> otherTitle:<#otherTitle#>, nil];
+    [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
+        <#doSomething#>
+    }];
+ */
+
+
+
+
 #import <UIKit/UIKit.h>
 
 
@@ -71,8 +90,8 @@ NS_CLASS_AVAILABLE_IOS(8_0) @interface JKAlertManager : UIView
  */
 - (void)configueCancelTitle:(NSString *__nullable)cancelTitle destructiveIndex:(NSInteger)destructiveIndex otherTitle:(NSString * __nullable)otherTitle,...NS_REQUIRES_NIL_TERMINATION NS_AVAILABLE_IOS(8_0);
 
-/**    传输组    */
-- (void)configueCancelTitle:(NSString *__nullable)cancelTitle destructiveIndex:(NSInteger)destructiveIndex otherTitles:(NSArray *__nullable)otherTitles NS_AVAILABLE_IOS(8_0);
+/**    传数组    */
+- (void)configueCancelTitle:(NSString *__nullable)cancelTitle destructiveIndex:(NSInteger)destructiveIndex otherTitles:(NSArray <NSString *>* __nullable)otherTitles NS_AVAILABLE_IOS(8_0);
 
 
 

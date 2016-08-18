@@ -92,7 +92,11 @@ NSString * const JKCellKey = @"UITableViewCellReuseKey";
                 NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self);
                 self.tableView.backgroundColor = [UIColor whiteColor];
             }];
-            
+//            JKAlertManager * manager = [JKAlertManager alertWithPreferredStyle:UIAlertControllerStyleAlert title:@"请求失败，错误码：2234" message:nil];
+//            [manager configueCancelTitle:@"确认" destructiveIndex:JKAlertDestructiveIndexNone otherTitles:nil];
+//            [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
+//                NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self);
+//            }];
         }break;
             
             
@@ -125,10 +129,7 @@ NSString * const JKCellKey = @"UITableViewCellReuseKey";
             JKAlertManager * manager = [JKAlertManager alertWithPreferredStyle:UIAlertControllerStyleAlert title:self.dataArray[indexPath.row] message:self.dataArray[indexPath.row] ];
             self.manager = manager;
             [manager configueCancelTitle:@"取消" destructiveIndex:1 otherTitle:@"其他按钮1",@"Destructive按钮",@"其他按钮2", nil];
-            [manager addTextFieldWithPlaceholder:@"请输入账号" secureTextEntry:NO ConfigurationHandler:nil textFieldTextChanged:^(UITextField *textField) {
-                NSLog(@"1          %@",textField.text);
-                self.view.backgroundColor = [UIColor whiteColor];
-            }];
+            [manager addTextFieldWithPlaceholder:@"请输入账号" secureTextEntry:NO ConfigurationHandler:nil textFieldTextChanged:nil];
             [manager addTextFieldWithPlaceholder:@"请输入密码" secureTextEntry:YES ConfigurationHandler:^(UITextField *textField) {
                 textField.clearsOnBeginEditing = YES;
             } textFieldTextChanged:^(UITextField *textField) {
