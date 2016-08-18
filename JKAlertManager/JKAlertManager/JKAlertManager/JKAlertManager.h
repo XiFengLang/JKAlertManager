@@ -9,24 +9,40 @@
 
 
 /**    代码块
-     JKAlertManager * manager = [JKAlertManager alertWithPreferredStyle:UIAlertControllerStyleAlert title:<#title#> message:<#nil#>];
-    [manager configueCancelTitle:<#@"取消"#> destructiveIndex:JKAlertDestructiveIndexNone otherTitles:<#array#>];
-    [manager showAlertFromCodwntroller:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
-        <#doSomething#>
-    }];
-
-     JKAlertManager * manager = [JKAlertManager alertWithPreferredStyle:UIAlertControllerStyleAlert title:<#title#> message:<#nil#>];
-    [manager configueCancelTitle:<#@"取消"#> destructiveIndex:<#index#> otherTitle:<#otherTitle#>, nil];
-    [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
-        <#doSomething#>
-    }];
+ JKAlertManager * manager = [JKAlertManager alertWithPreferredStyle:UIAlertControllerStyleAlert title:<#title#> message:<#nil#>];
+ [manager configueCancelTitle:<#@"取消"#> destructiveIndex:JKAlertDestructiveIndexNone otherTitles:<#array#>];
+ [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
+ if (actionIndex != tempAlertManager.cancelIndex) {
+ <#doSomething#>
+ }
+ }];
+ 
+ 
+ JKAlertManager * manager = [JKAlertManager alertWithPreferredStyle:UIAlertControllerStyleAlert title:<#title#> message:<#nil#>];
+ [manager configueCancelTitle:<#@"取消"#> destructiveIndex:<#JKAlertDestructiveIndexNone#> otherTitle:<#@"确定"#>, nil];
+ [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
+ if (actionIndex != tempAlertManager.cancelIndex) {
+ <#doSomething#>
+ }
+ }];
+ 
+ 
+ 
+ JKAlertManager * manager = [JKAlertManager alertWithPreferredStyle:UIAlertControllerStyleActionSheet title:<#nil#> message:<#nil#>];
+ [manager configueCancelTitle:<#@"取消"#> destructiveIndex:JKAlertDestructiveIndexNone otherTitle:<#@""#>, nil];
+ [manager configuePopoverControllerForActionSheetStyleWithSourceView:<#view#> sourceRect:<#view#>.bounds popoverArrowDirection:UIPopoverArrowDirectionAny];
+ [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
+ if (actionIndex != tempAlertManager.cancelIndex) {
+ 
+ }
+ }];
  */
 
 
 
 
 #import <UIKit/UIKit.h>
-
+#import "JKAlertView.h"
 
 
 NS_ASSUME_NONNULL_BEGIN
@@ -119,6 +135,8 @@ NS_CLASS_AVAILABLE_IOS(8_0) @interface JKAlertManager : UIView
  */
 - (void)showAlertFromController:(UIViewController *)controller actionBlock:(JKAlertActionBlock __nullable)actionBlock NS_AVAILABLE_IOS(8_0);
 
+
+- (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated;
 
 NS_ASSUME_NONNULL_END
 @end

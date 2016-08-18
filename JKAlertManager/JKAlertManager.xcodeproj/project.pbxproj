@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9F98B6A81D65AFAB0039EC6F /* JKAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F98B6A71D65AFAB0039EC6F /* JKAlertView.m */; };
 		9FFBC2391D5B27BE0040B061 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFBC2381D5B27BE0040B061 /* main.m */; };
 		9FFBC23C1D5B27BE0040B061 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFBC23B1D5B27BE0040B061 /* AppDelegate.m */; };
 		9FFBC23F1D5B27BE0040B061 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFBC23E1D5B27BE0040B061 /* ViewController.m */; };
@@ -19,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		9F98B6A61D65AFAB0039EC6F /* JKAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKAlertView.h; sourceTree = "<group>"; };
+		9F98B6A71D65AFAB0039EC6F /* JKAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKAlertView.m; sourceTree = "<group>"; };
 		9FFBC2341D5B27BE0040B061 /* JKAlertManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JKAlertManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FFBC2381D5B27BE0040B061 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9FFBC23A1D5B27BE0040B061 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -98,6 +101,8 @@
 			children = (
 				9FFBC25A1D5C34DD0040B061 /* JKAlertManager.h */,
 				9FFBC25B1D5C34DD0040B061 /* JKAlertManager.m */,
+				9F98B6A61D65AFAB0039EC6F /* JKAlertView.h */,
+				9F98B6A71D65AFAB0039EC6F /* JKAlertView.m */,
 			);
 			path = JKAlertManager;
 			sourceTree = "<group>";
@@ -176,6 +181,7 @@
 				9FFBC23F1D5B27BE0040B061 /* ViewController.m in Sources */,
 				9FFBC23C1D5B27BE0040B061 /* AppDelegate.m in Sources */,
 				9FFBC25C1D5C34DD0040B061 /* JKAlertManager.m in Sources */,
+				9F98B6A81D65AFAB0039EC6F /* JKAlertView.m in Sources */,
 				9FFBC2551D5B3B8C0040B061 /* UIActionSheet+BlockExtension.m in Sources */,
 				9FFBC2391D5B27BE0040B061 /* main.m in Sources */,
 			);

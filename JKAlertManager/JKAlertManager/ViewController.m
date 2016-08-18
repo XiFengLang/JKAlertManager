@@ -8,14 +8,14 @@
 
 #import "ViewController.h"
 #import "JKAlertManager.h"
-#import "UIAlertView+BlockExtension.h"
+#import "JKAlertView+BlockExtension.h"
 #import "UIActionSheet+BlockExtension.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong)NSMutableArray * dataArray;
 
-@property (nonatomic, strong)UIAlertView * alertView;
+@property (nonatomic, strong)JKAlertView * alertView;
 @property (nonatomic, strong)UIActionSheet * actionSheet;
 
 @property (nonatomic, strong)JKAlertManager * manager;
@@ -214,12 +214,25 @@ NSString * const JKCellKey = @"UITableViewCellReuseKey";
 }
 
 - (void)testAlertCategory{
-    self.alertView = [[UIAlertView alloc]initWithTitle:@"title" message:@"message" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"其他", nil];
-    [self.alertView showAlertViewWithActionBlock:^(UIAlertView *newAlertView, NSInteger buttonIndex) {
-        self.view.backgroundColor = [UIColor redColor];
-        self.alertView.backgroundColor = [UIColor clearColor];
-    }];
+    self.alertView = [[JKAlertView alloc]initWithTitle:@"title" message:@"message" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"1",@"2",@"3",nil];
+    [self.alertView show];
+//    [self.alertView showAlertViewWithActionBlock:^(JKAlertView *newAlertView, NSInteger buttonIndex) {
+//        NSLog(@"%zd",buttonIndex);
+//        self.view.backgroundColor = [UIColor redColor];
+//        self.alertView.backgroundColor = [UIColor clearColor];
+//    }];
+    
+    [self performSelector:@selector(dismissWithClickedButtonIndex) withObject:nil afterDelay:2];
 }
+
+- (void)dismissWithClickedButtonIndex{
+    [self.alertView dismissWithClickedButtonIndex:2 animated:YES];
+}
+
+-(void)alertView:(JKAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
+    NSLog(@"%zd   %zd    %zd",buttonIndex,alertView.firstOtherButtonIndex,alertView.cancelButtonIndex);
+}
+
 
 
 - (void)testActionSheetCategory{

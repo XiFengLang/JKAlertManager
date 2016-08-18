@@ -141,6 +141,16 @@ typedef void(^JKAlertManagerBlock)(NSInteger actionIndex, NSString * actionTitle
     };
 }
 
+- (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated{
+    [self.alertController dismissViewControllerAnimated:animated completion:^{
+        NSString * actionTitle = self.cancelIndex == buttonIndex ? self.cancelTitle : self.otherTitles[buttonIndex];
+        self.privateBlock(buttonIndex,actionTitle);
+    }];
+}
+
+
+
+
 - (void)addCancelAction{
     if (self.cancelTitle) {
         UIAlertAction * cancelAction = [UIAlertAction actionWithTitle:self.cancelTitle style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
