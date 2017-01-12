@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "JKAlertManager.h"
-#import "JKAlertView+BlockExtension.h"
+#import "UIAlertView+BlockExtension.h"
 #import "UIActionSheet+BlockExtension.h"
 
 @interface ViewController ()
@@ -68,8 +68,7 @@ NSString * const JKCellKey = @"UITableViewCellReuseKey";
     
     switch (indexPath.row) {
         case 0:{
-            
-            JKAlertManager * manager = [JKAlertManager alertWithPreferredStyle:UIAlertControllerStyleAlert title:self.dataArray[indexPath.row] message:messgae ];
+            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleAlert title:self.dataArray[indexPath.row] message:messgae ];
             self.manager = manager;
             [manager configueCancelTitle:nil destructiveIndex:1 otherTitle:@"其他按钮1",@"Destructive按钮",@"其他按钮2", nil];
             [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
@@ -77,22 +76,19 @@ NSString * const JKCellKey = @"UITableViewCellReuseKey";
                 self.tableView.backgroundColor = [UIColor whiteColor];
             }];
             
-            // tips：执行self.tableView.backgroundColor = [UIColor whiteColor];是为了测试Block循环引用
-            
-            
         }break;
             
             
         case 1:{
             
-            JKAlertManager * manager = [JKAlertManager alertWithPreferredStyle:UIAlertControllerStyleAlert title:self.dataArray[indexPath.row] message:messgae ];
+            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleAlert title:self.dataArray[indexPath.row] message:messgae ];
             self.manager = manager;
             [manager configueCancelTitle:@"取消" destructiveIndex:JKAlertDestructiveIndexNone otherTitles:@[@"其他按钮0",@"其他按钮1",@"其他按钮2"]];
             [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
                 NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self);
                 self.tableView.backgroundColor = [UIColor whiteColor];
             }];
-//            JKAlertManager * manager = [JKAlertManager alertWithPreferredStyle:UIAlertControllerStyleAlert title:@"请求失败，错误码：2234" message:nil];
+//            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleAlert title:@"请求失败，错误码：2234" message:nil];
 //            [manager configueCancelTitle:@"确认" destructiveIndex:JKAlertDestructiveIndexNone otherTitles:nil];
 //            [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
 //                NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self);
@@ -102,7 +98,7 @@ NSString * const JKCellKey = @"UITableViewCellReuseKey";
             
         case 2:{
             
-            JKAlertManager * manager = [JKAlertManager alertWithPreferredStyle:UIAlertControllerStyleAlert title:self.dataArray[indexPath.row] message:nil ];
+            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleAlert title:self.dataArray[indexPath.row] message:nil ];
             self.manager = manager;
             [manager configueCancelTitle:@"取消" destructiveIndex:1 otherTitle:@"其他按钮1",@"Destructive按钮",@"其他按钮2", nil];
             [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
@@ -114,7 +110,7 @@ NSString * const JKCellKey = @"UITableViewCellReuseKey";
             
         case 3:{
             
-            JKAlertManager * manager = [JKAlertManager alertWithPreferredStyle:UIAlertControllerStyleAlert title:self.dataArray[indexPath.row] message:self.dataArray[indexPath.row] ];
+            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleAlert title:self.dataArray[indexPath.row] message:self.dataArray[indexPath.row] ];
             [manager configueCancelTitle:@"取消" destructiveIndex:1 otherTitle:@"其他按钮1",@"Destructive按钮",@"其他按钮2", nil];
             [manager addTextFieldWithPlaceholder:@"请输入账号" secureTextEntry:NO ConfigurationHandler:nil textFieldTextChanged:nil];
             [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
@@ -126,7 +122,7 @@ NSString * const JKCellKey = @"UITableViewCellReuseKey";
             
         case 4:{
             
-            JKAlertManager * manager = [JKAlertManager alertWithPreferredStyle:UIAlertControllerStyleAlert title:self.dataArray[indexPath.row] message:self.dataArray[indexPath.row] ];
+            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleAlert title:self.dataArray[indexPath.row] message:self.dataArray[indexPath.row] ];
             self.manager = manager;
             [manager configueCancelTitle:@"取消" destructiveIndex:1 otherTitle:@"其他按钮1",@"Destructive按钮",@"其他按钮2", nil];
             [manager addTextFieldWithPlaceholder:@"请输入账号" secureTextEntry:NO ConfigurationHandler:nil textFieldTextChanged:nil];
@@ -148,7 +144,7 @@ NSString * const JKCellKey = @"UITableViewCellReuseKey";
             
         case 5:{
             
-            JKAlertManager * manager = [JKAlertManager alertWithPreferredStyle:UIAlertControllerStyleActionSheet title:self.dataArray[indexPath.row] message:messgae ];
+            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleActionSheet title:self.dataArray[indexPath.row] message:messgae ];
             self.manager = manager;
             [manager configueCancelTitle:nil destructiveIndex:2 otherTitle:@"其他按钮1",@"其他按钮2",@"Destructive按钮", nil];
             [manager configuePopoverControllerForActionSheetStyleWithSourceView:cell sourceRect:cell.bounds popoverArrowDirection:UIPopoverArrowDirectionAny];
@@ -162,7 +158,7 @@ NSString * const JKCellKey = @"UITableViewCellReuseKey";
             
         case 6:{
             
-            JKAlertManager * manager = [JKAlertManager alertWithPreferredStyle:UIAlertControllerStyleActionSheet title:self.dataArray[indexPath.row] message:messgae];
+            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleActionSheet title:self.dataArray[indexPath.row] message:messgae];
             self.manager = manager;
             [manager configueCancelTitle:nil destructiveIndex:JKAlertDestructiveIndexNone otherTitle:@"其他按钮0",@"其他按钮1",@"其他按钮2", nil];
             [manager configuePopoverControllerForActionSheetStyleWithSourceView:cell sourceRect:cell.bounds popoverArrowDirection:UIPopoverArrowDirectionAny];
@@ -176,7 +172,7 @@ NSString * const JKCellKey = @"UITableViewCellReuseKey";
             
         case 7:{
             
-            JKAlertManager * manager = [JKAlertManager alertWithPreferredStyle:UIAlertControllerStyleActionSheet title:self.dataArray[indexPath.row] message:nil ];
+            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleActionSheet title:self.dataArray[indexPath.row] message:nil ];
             self.manager = manager;
             [manager configueCancelTitle:nil destructiveIndex:0 otherTitle:@"Destructive按钮",@"其他按钮1",@"其他按钮2", nil];
             [manager configuePopoverControllerForActionSheetStyleWithSourceView:cell sourceRect:cell.bounds popoverArrowDirection:UIPopoverArrowDirectionAny];

@@ -8,37 +8,48 @@
 
 #import "JKAlertManager.h"
 
-#define JK_iPad          UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad
+
+@interface __JKAlertManagerPrivateHolder : UIView
+@property (nonatomic, strong) JKAlertManager * alertManager;
+@end
+@implementation __JKAlertManagerPrivateHolder
+@end
+
+
+
+
+static inline BOOL JK_iPad() {
+    return UIDevice.currentDevice.userInterfaceIdiom == UIUserInterfaceIdiomPad;
+}
 const NSInteger JKAlertDestructiveIndexNone = -2;
 typedef void(^JKAlertManagerBlock)(NSInteger actionIndex, NSString * actionTitle);
 
 
+
 @interface JKAlertManager ()
 
+@property (nonatomic, weak) __JKAlertManagerPrivateHolder * privateHolder;
 @property (nonatomic, strong)UIAlertController * alertController;
 @property (nonatomic, copy) NSString * destructiveTitle;
 @property (nonatomic, copy) NSString * cancelTitle;
 @property (nonatomic, strong)NSMutableArray * otherTitles;
 @property (nonatomic, copy)JKAlertManagerBlock privateBlock;
 @property (nonatomic, strong)NSMutableDictionary * textFieldChangedBlockMutDict;
+
 @end
 
 @implementation JKAlertManager
 
-- (instancetype)init{
+
+- (instancetype)initWithPreferredStyle:(UIAlertControllerStyle)style title:(NSString *)title message:(NSString *)message {
     if (self = [super init]) {
         _cancelIndex = -1;
         _destructiveIndex = JKAlertDestructiveIndexNone;
-        self.frame = CGRectZero;
         [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(textFieldTextDidChanged:) name:UITextFieldTextDidChangeNotification object:nil];
+        self.alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:style];
     }return self;
 }
 
-+ (instancetype)alertWithPreferredStyle:(UIAlertControllerStyle)style title:(NSString *)title message:(NSString *)message{
-    JKAlertManager * alertManager = [[JKAlertManager alloc]init];
-    alertManager.alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:style];
-    return alertManager;
-}
 
 - (void)configueCancelTitle:(NSString *)cancelTitle destructiveIndex:(NSInteger)destructiveIndex otherTitle:(NSString *)otherTitle, ...NS_REQUIRES_NIL_TERMINATION{
 
@@ -81,7 +92,7 @@ typedef void(^JKAlertManagerBlock)(NSInteger actionIndex, NSString * actionTitle
 
 
 - (void)configuePopoverControllerForActionSheetStyleWithSourceView:(UIView *)sourceView sourceRect:(CGRect)sourceRect popoverArrowDirection:(UIPopoverArrowDirection)popoverArrowDirection{
-    if (JK_iPad && self.alertController) {
+    if (JK_iPad() && self.alertController) {
         if (self.alertController.preferredStyle == UIAlertControllerStyleActionSheet) {
             UIPopoverPresentationController * popoverController = self.alertController.popoverPresentationController;
             if (popoverController) {
@@ -122,8 +133,20 @@ typedef void(^JKAlertManagerBlock)(NSInteger actionIndex, NSString * actionTitle
 }
 
 - (void)showAlertFromController:(UIViewController *)controller actionBlock:(JKAlertActionBlock)actionBlock{
-    self.frame = CGRectZero;
-    [controller.view addSubview:self];
+
+    if (self.privateHolder) {
+        [self.privateHolder removeFromSuperview];
+        self.privateHolder = nil;
+    }
+    
+    
+    /// 私有类，强引用JKAlertManager
+    __JKAlertManagerPrivateHolder * privateHolder = [[__JKAlertManagerPrivateHolder alloc] initWithFrame:CGRectZero];
+    privateHolder.backgroundColor = [UIColor clearColor];
+    privateHolder.alertManager = self;
+    self.privateHolder = privateHolder;
+    [controller.view addSubview:privateHolder];
+    
     
     [controller presentViewController:self.alertController animated:YES completion:nil];
     
@@ -137,7 +160,7 @@ typedef void(^JKAlertManagerBlock)(NSInteger actionIndex, NSString * actionTitle
         strongSelf.privateBlock = nil;
         strongSelf.textFieldChangedBlockMutDict = nil;
         strongSelf.otherTitles = nil;
-        [strongSelf performSelector:@selector(removeFromSuperview)];
+        [strongSelf.privateHolder removeFromSuperview];
     };
 }
 

@@ -1,6 +1,6 @@
 //
 //  JKAlertView.h
-//  珍夕
+//  JKAlertManager
 //
 //  Created by 蒋鹏 on 16/8/18.
 //  Copyright © 2016年 蒋鹏. All rights reserved.
@@ -19,7 +19,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 
 
-
+/**    JKAlertView可用于全局替换UIAlertView，如果不需要全局替换UIAlertView，可删除本类文件    */
 @interface JKAlertView : UIView
 - (instancetype)init                                NS_UNAVAILABLE;
 - (instancetype)initWithCoder:(NSCoder *)aDecoder   NS_UNAVAILABLE;

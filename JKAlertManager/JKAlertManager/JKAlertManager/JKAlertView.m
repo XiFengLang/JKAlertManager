@@ -1,6 +1,6 @@
 //
 //  JKAlertView.m
-//  珍夕
+//  JKAlertManager
 //
 //  Created by 蒋鹏 on 16/8/18.
 //  Copyright © 2016年 蒋鹏. All rights reserved.
@@ -44,7 +44,7 @@
         
         self.delegate = delegate;
         
-        JKAlertManager * manager = [JKAlertManager alertWithPreferredStyle:UIAlertControllerStyleAlert title:title message:message];
+        JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleAlert title:title message:message];
         [manager configueCancelTitle:cancelButtonTitle destructiveIndex:JKAlertDestructiveIndexNone otherTitles:otherTitles.copy];
         _manager = manager;
     }return self;

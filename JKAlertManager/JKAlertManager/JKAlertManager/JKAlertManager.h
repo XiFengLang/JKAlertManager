@@ -9,7 +9,7 @@
 
 
 /**    代码块
- JKAlertManager * manager = [JKAlertManager alertWithPreferredStyle:UIAlertControllerStyleAlert title:<#title#> message:<#nil#>];
+ JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleAlert title:<#title#> message:<#nil#>];
  [manager configueCancelTitle:<#@"取消"#> destructiveIndex:JKAlertDestructiveIndexNone otherTitles:<#array#>];
  [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
  if (actionIndex != tempAlertManager.cancelIndex) {
@@ -18,7 +18,7 @@
  }];
  
  
- JKAlertManager * manager = [JKAlertManager alertWithPreferredStyle:UIAlertControllerStyleAlert title:<#title#> message:<#nil#>];
+ JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleAlert title:<#title#> message:<#nil#>];
  [manager configueCancelTitle:<#@"取消"#> destructiveIndex:<#JKAlertDestructiveIndexNone#> otherTitle:<#@"确定"#>, nil];
  [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
  if (actionIndex != tempAlertManager.cancelIndex) {
@@ -28,12 +28,12 @@
  
  
  
- JKAlertManager * manager = [JKAlertManager alertWithPreferredStyle:UIAlertControllerStyleActionSheet title:<#nil#> message:<#nil#>];
+ JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleActionSheet title:<#nil#> message:<#nil#>];
  [manager configueCancelTitle:<#@"取消"#> destructiveIndex:JKAlertDestructiveIndexNone otherTitle:<#@""#>, nil];
  [manager configuePopoverControllerForActionSheetStyleWithSourceView:<#view#> sourceRect:<#view#>.bounds popoverArrowDirection:UIPopoverArrowDirectionAny];
  [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
  if (actionIndex != tempAlertManager.cancelIndex) {
- 
+    
  }
  }];
  */
@@ -43,9 +43,9 @@
 
 #import <UIKit/UIKit.h>
 #import "JKAlertView.h"
-
-
 NS_ASSUME_NONNULL_BEGIN
+
+
 UIKIT_EXTERN const NSInteger JKAlertDestructiveIndexNone;/**<  默认-2,没有destructiveTitle时设置  */
 
 
@@ -55,30 +55,29 @@ typedef void(^JKAlertTextFieldTextChangedBlock)(UITextField * __nullable textFie
 
 
 
-/**
- JKAlertManager继承UIView,会被superView请引用,removeFromSuperview后即可实现自动释放
- */
-NS_CLASS_AVAILABLE_IOS(8_0) @interface JKAlertManager : UIView
-
-
-
-/**    *********************不要使用init方法初始化,而是用类方法初始化*********************    */
-- (instancetype)init ;                              //NS_DESIGNATED_INITIALIZER
+NS_CLASS_AVAILABLE_IOS(8_0) @interface JKAlertManager : NSObject
+- (instancetype)init NS_UNAVAILABLE;                //NS_DESIGNATED_INITIALIZER
 - (instancetype)initWithCoder:(NSCoder *)aDecoder   NS_UNAVAILABLE;
 - (instancetype)initWithFrame:(CGRect)frame         NS_UNAVAILABLE;
-
-
 
 
 @property (nonatomic, copy) NSString * __nullable title NS_AVAILABLE_IOS(8_0);
 
 @property (nonatomic, copy) NSString * __nullable message NS_AVAILABLE_IOS(8_0);
 
-/**    默认-1    */
+/**
+ 默认-1
+ */
 @property (nonatomic, assign, readonly)NSInteger cancelIndex NS_AVAILABLE_IOS(8_0);
-/**    默认-2    */
+
+/**
+ 默认-2
+ */
 @property (nonatomic, assign, readonly)NSInteger destructiveIndex NS_AVAILABLE_IOS(8_0);
 
+/**
+ textFields
+ */
 @property (nullable, nonatomic, readonly) NSArray<UITextField *> *textFields NS_AVAILABLE_IOS(8_0);
 
 
@@ -93,7 +92,7 @@ NS_CLASS_AVAILABLE_IOS(8_0) @interface JKAlertManager : UIView
  *
  *  @return JKAlertManager
  */
-+ (instancetype)alertWithPreferredStyle:(UIAlertControllerStyle)style title:(NSString *__nullable)title message:(NSString *__nullable)message NS_AVAILABLE_IOS(8_0);
+- (instancetype)initWithPreferredStyle:(UIAlertControllerStyle)style title:(NSString *__nullable)title message:(NSString *__nullable)message NS_AVAILABLE_IOS(8_0);
 
 
 
@@ -106,13 +105,16 @@ NS_CLASS_AVAILABLE_IOS(8_0) @interface JKAlertManager : UIView
  */
 - (void)configueCancelTitle:(NSString *__nullable)cancelTitle destructiveIndex:(NSInteger)destructiveIndex otherTitle:(NSString * __nullable)otherTitle,...NS_REQUIRES_NIL_TERMINATION NS_AVAILABLE_IOS(8_0);
 
+
+
+
 /**    传数组    */
 - (void)configueCancelTitle:(NSString *__nullable)cancelTitle destructiveIndex:(NSInteger)destructiveIndex otherTitles:(NSArray <NSString *>* __nullable)otherTitles NS_AVAILABLE_IOS(8_0);
 
 
 
 
-/**    1.兼容iPad时需调用,APP只供iPhone可忽略  2.必须使用UIAlertControllerStyleActionSheet    */
+/**    1.兼容iPad时需调用,APP只支持iPhone的话可忽略  2.必须使用UIAlertControllerStyleActionSheet    */
 - (void)configuePopoverControllerForActionSheetStyleWithSourceView:(UIView *)sourceView sourceRect:(CGRect)sourceRect popoverArrowDirection:(UIPopoverArrowDirection)popoverArrowDirection NS_AVAILABLE_IOS(8_0);
 
 
@@ -136,7 +138,7 @@ NS_CLASS_AVAILABLE_IOS(8_0) @interface JKAlertManager : UIView
 - (void)showAlertFromController:(UIViewController *)controller actionBlock:(JKAlertActionBlock __nullable)actionBlock NS_AVAILABLE_IOS(8_0);
 
 
-- (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated;
+- (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated NS_AVAILABLE_IOS(8_0);
 
-NS_ASSUME_NONNULL_END
 @end
+NS_ASSUME_NONNULL_END
