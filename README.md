@@ -1,8 +1,9 @@
 # JKAlertManager--深度封装UIAlertController
 `1.1`
 ------
-使用 UIAlertController 时，每个AlertAction对应一个Block，经常写重复代码。
-JKAlertManager 将 UIAlertController 分散的ActionBlcok集中到一个Blcok中，代码精简高效。
+使用 UIAlertController 时，每个AlertAction对应一个Block，会经常写重复代码。
+
+而JKAlertManager 将 UIAlertController 分散的ActionBlcok集中到一个Blcok中，代码精简高效。
 
 
 > * 兼容UIAlertControllerStyleAlert和UIAlertControllerStyleActionSheet
@@ -12,10 +13,8 @@ JKAlertManager 将 UIAlertController 分散的ActionBlcok集中到一个Blcok中
 
 ------
 
-> 1.0.4版本中增加JKAlertView类用于全局替换UIAlertView，若无此需求可将JKAlertView类删除掉。
-> 1.1版本 JKAlertManager 继承NSObject,命名更规范。
-
-
+* 1.0.4版本中增加JKAlertView类用于全局替换UIAlertView，若无此需求可将JKAlertView类删除掉。
+* 1.1版本 JKAlertManager 继承NSObject, 封装更完整。
 
  ![image](https://github.com/XiFengLang/JKAlertManager/blob/master/JKAlertManager/JKAlertManagerVideo.gif)
 ------
@@ -72,8 +71,9 @@ JKAlertManager 将 UIAlertController 分散的ActionBlcok集中到一个Blcok中
 之前封装的难点主要在于拆分`(NSString *)otherTitle, ...NS_REQUIRES_NIL_TERMINATION`，将otherTitle转换成数组，用法见Demo或者[NS_REQUIRES_NIL_TERMINATION](http://www.jianshu.com/p/f61ff5e72b72)。但后来发现并没啥优越性，也可以直接传NSArray。
 解除Block循环引用的思路参考了 `AFNetworking`，即调用了Block后，再将Block = nil置空，即可解除循环引用，这种思路只适合调用一次的Block，多次调用的Block还是需要进行self强弱转换。
 
-`1.0.4`版中~ `JKAlertManager`继承自`UIView`，宽高各1“像素”，透明色，被父视图superView强引用，需要释放时在内部调用`[self performSelector:@selector(removeFromSuperview)]`即可起到引用计数-1的效果，不需要在外部控制JKAlrtManager的释放。~ 
-`1.1`版中，JKAlertManager 继承 NSObject,被内部继承`__JKAlertManagerPrivateHolder`类的私有的View强引用，JKAlertManager则会弱引用这个私有View。
+`1.0.4`版中~~`JKAlertManager`继承自`UIView`，宽高各1“像素”，透明色，被父视图superView强引用，需要释放时在内部调用`[self performSelector:@selector(removeFromSuperview)]`即可起到引用计数-1的效果，不需要在外部控制JKAlrtManager的释放。~~
+
+`1.1`版中，JKAlertManager 继承 NSObject,被内部继承`__JKAlertManagerPrivateHolder`类的私有View强引用，JKAlertManager则会弱引用这个私有View。私有View在`showAlertFromController:(UIViewController *)ViewController`方法中添加到控制器ViewController.view上，间接实现控制器对JKAlertManager的强引用，但也可以通过私有View调用`removeFromSuperView`来解除强引用，从而实现自释放。
 ```Object-C
 @interface __JKAlertManagerPrivateHolder : UIView
 @property (nonatomic, strong) JKAlertManager * alertManager;
@@ -85,9 +85,9 @@ JKAlertManager 将 UIAlertController 分散的ActionBlcok集中到一个Blcok中
 @interface JKAlertManager ()
 @property (nonatomic, weak) __JKAlertManagerPrivateHolder * privateHolder;
 @end
-```
-这个私有View在`showAlertFromController:(UIViewController *)ViewController`方法中添加到控制器ViewController.view上，间接实现控制器对JKAlertManager的强引用，但也可以通过私有View调用`removeFromSuperView`来解除强引用，从而实现自释放。
-```Objct-C
+
+
+
 - (void)showAlertFromController:(UIViewController *)controller actionBlock:(JKAlertActionBlock)actionBlock{
 
     if (self.privateHolder) {
@@ -125,11 +125,12 @@ JKAlertManager 将 UIAlertController 分散的ActionBlcok集中到一个Blcok中
 
 ------
 
-如果控制器使用到多个`IAlertView或者UIActionSheet`，那么需要在多个地方创建对象并设置`delegate和tag`，然后集中在一个代理方法中先根据tag区分对象，再区分`buttonIndex`，这样写的代码比较分散，可视性不强。
 
 ## 基于Runtime+Block封装的UIAlertView和UIActionSheet分类
 > * 一个IAlertView或UIActionSheet对象对应一个Block，代码紧凑。
 > * 不会出现内存泄露，规避Block循环引用
+
+如果控制器使用到多个`IAlertView或者UIActionSheet`，那么需要在多个地方创建对象并设置`delegate和tag`，然后集中在一个代理方法中先根据tag区分对象，再区分`buttonIndex`，这样写的代码比较分散，可视性不强。
 
 ```Objct-C
     self.alertView = [[UIAlertView alloc]initWithTitle:@"title" message:@"message" delegate:nil cancelButtonTitle:@"取消" otherButtonTitles:@"其他", nil];
