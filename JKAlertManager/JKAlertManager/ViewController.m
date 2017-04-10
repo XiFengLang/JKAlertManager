@@ -167,6 +167,9 @@ NSString * const JKCellKey = @"UITableViewCellReuseKey";
                 self.tableView.backgroundColor = [UIColor whiteColor];
             }];
             
+//            [self performSelector:@selector(excuteDelayAction) withObject:nil afterDelay:2.0];
+            
+            
         }break;
             
             
@@ -189,6 +192,10 @@ NSString * const JKCellKey = @"UITableViewCellReuseKey";
     
 }
 
+
+//- (void)excuteDelayAction {
+//    [self.manager dismissWithClickedButtonIndex:1 animated:YES];
+//}
 
 
 - (void)viewDidAppear:(BOOL)animated{

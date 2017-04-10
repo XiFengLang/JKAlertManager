@@ -133,7 +133,7 @@ NS_CLASS_AVAILABLE_IOS(8_0) @interface JKAlertManager : NSObject
  *
  *
  *  @param controller  用来跳转的控制器
- *  @param actionBlock
+ *  @param actionBlock 回调
  */
 - (void)showAlertFromController:(UIViewController *)controller actionBlock:(JKAlertActionBlock __nullable)actionBlock NS_AVAILABLE_IOS(8_0);
 
