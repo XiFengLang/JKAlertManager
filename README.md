@@ -16,7 +16,7 @@
 * 1.0.4版本中增加JKAlertView类用于全局替换UIAlertView，若无此需求可将JKAlertView类删除掉。
 * 1.1版本 JKAlertManager 继承NSObject, 封装更完整。
 
- ![image](https://github.com/XiFengLang/JKAlertManager/blob/master/JKAlertManager/JKAlertManagerVideo.gif)
+ ![image](http://wx4.sinaimg.cn/mw690/c56eaed1gy1fetajxry5mg20aj0j77wh.gif)
 ------
 
 如果仍使用`IAlertView和UIActionSheet`，可以用Demo中的的UIAlertView和UIActionSheet分类来精简代码,详情见后面的介绍。
@@ -120,8 +120,7 @@
     };
 }
 ```
-
- ![image](https://github.com/XiFengLang/JKAlertManager/blob/master/JKAlertManager/ScreenShot01.png) ![image](https://github.com/XiFengLang/JKAlertManager/blob/master/JKAlertManager/ScreenShot02.png) ![image](https://github.com/XiFengLang/JKAlertManager/blob/master/JKAlertManager/ScreenShot03.png)
+<img src="http://wx3.sinaimg.cn/mw690/c56eaed1gy1fetajy78s4j20af0ijdi3.jpg" width="230" height="400"><img src="http://wx4.sinaimg.cn/mw690/c56eaed1gy1fetajyiufyj20af0ijjtg.jpg" width="230" height="400"><img src="http://wx4.sinaimg.cn/mw690/c56eaed1gy1fetajyuefij20af0ijjtb.jpg" width="230" height="400">
 
 ------
 
