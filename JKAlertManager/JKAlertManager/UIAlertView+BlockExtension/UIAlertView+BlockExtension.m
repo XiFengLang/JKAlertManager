@@ -27,8 +27,13 @@
     block = nil;
 }
 
+
+#warning !!! 测试完就注释掉下面的代码
+
+#ifdef DEBUG
 - (void)dealloc{
     NSLog(@"%@被释放",[self class]);
 }
+#endif
 
 @end

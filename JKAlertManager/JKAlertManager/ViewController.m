@@ -15,24 +15,23 @@
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
 @property (nonatomic, strong)NSMutableArray * dataArray;
 
-@property (nonatomic, strong)JKAlertView * alertView;
-@property (nonatomic, strong)UIActionSheet * actionSheet;
+
+
 
 @property (nonatomic, strong)JKAlertManager * manager;
 @end
 
 @implementation ViewController
 NSString * const JKCellKey = @"UITableViewCellReuseKey";
+
 - (void)viewDidLoad {
     [super viewDidLoad];
-    if (self.navigationController.viewControllers.count == 1) {
-        self.navigationItem.title = @"JKAlertManagerDemo";
-    }else{
-        self.navigationItem.title = @"自动解除循环引用";
-    }
+    self.navigationItem.title = @"自动解除循环引用";
+    
     self.view.backgroundColor = [UIColor whiteColor];
     self.tableView.tableFooterView = UIView.new;
     [self.tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:JKCellKey];
+    
     NSArray * array = @[@"StyleAlert,无CancelButtonTitle,有Destructive按钮",
                         @"StyleAlert,有CancelButtonTitle,无Destructive按钮",
                         @"StyleAlert,有title,无message",
@@ -46,19 +45,7 @@ NSString * const JKCellKey = @"UITableViewCellReuseKey";
 }
 
 
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
-    return self.dataArray.count;
-}
 
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
-    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:JKCellKey];
-    cell.textLabel.text = self.dataArray[indexPath.row];
-    return cell;
-}
-
-- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
-    return 50;
-}
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     NSString * messgae = @"无Destructive按钮时destructiveIndex默认-2(JKAlertDestructiveIndexNone),Destructive按钮对应UIAlertActionStyleDestructive的title。";
@@ -88,11 +75,6 @@ NSString * const JKCellKey = @"UITableViewCellReuseKey";
                 NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self);
                 self.tableView.backgroundColor = [UIColor whiteColor];
             }];
-//            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleAlert title:@"请求失败，错误码：2234" message:nil];
-//            [manager configueCancelTitle:@"确认" destructiveIndex:JKAlertDestructiveIndexNone otherTitles:nil];
-//            [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
-//                NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self);
-//            }];
         }break;
             
             
@@ -134,9 +116,10 @@ NSString * const JKCellKey = @"UITableViewCellReuseKey";
             }];
             [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
                 NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self);
+                
                 self.tableView.backgroundColor = [UIColor whiteColor];
-//                UITextField * userNameTextField = tempAlertManager.textFields[0];
-//                UITextField * passwordTextField = tempAlertManager.textFields[1];
+                UITextField * userNameTextField = tempAlertManager.textFields[0];
+                UITextField * passwordTextField = tempAlertManager.textFields[1];
             }];
             
         }break;
@@ -167,9 +150,6 @@ NSString * const JKCellKey = @"UITableViewCellReuseKey";
                 self.tableView.backgroundColor = [UIColor whiteColor];
             }];
             
-//            [self performSelector:@selector(excuteDelayAction) withObject:nil afterDelay:2.0];
-            
-            
         }break;
             
             
@@ -193,61 +173,23 @@ NSString * const JKCellKey = @"UITableViewCellReuseKey";
 }
 
 
-//- (void)excuteDelayAction {
-//    [self.manager dismissWithClickedButtonIndex:1 animated:YES];
-//}
-
-
-- (void)viewDidAppear:(BOOL)animated{
-    [super viewDidAppear:animated];
-    if (self.navigationController.viewControllers.count == 1) {
-        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc]initWithTitle:@"跳转" style:UIBarButtonItemStylePlain target:self action:@selector(pushAction)];
-    }else if (self.navigationController.viewControllers.count == 2){
-        UIBarButtonItem * alertIetm = [[UIBarButtonItem alloc]initWithTitle:@"Alert" style:UIBarButtonItemStylePlain target:self action:@selector(testAlertCategory)];
-        UIBarButtonItem * sheetItem = [[UIBarButtonItem alloc]initWithTitle:@"ActionSheet" style:UIBarButtonItemStylePlain target:self action:@selector(testActionSheetCategory)];
-        self.navigationItem.rightBarButtonItems = @[alertIetm,sheetItem];
-    }
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section{
+    return self.dataArray.count;
 }
 
-
-- (void)pushAction{
-    UIStoryboard *mainStory = [UIStoryboard storyboardWithName:@"Main" bundle:nil];
-    ViewController * controller = [mainStory instantiateViewControllerWithIdentifier:@"ViewController"];
-    [self.navigationController pushViewController:controller animated:YES];
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath{
+    UITableViewCell * cell = [tableView dequeueReusableCellWithIdentifier:JKCellKey];
+    cell.textLabel.text = self.dataArray[indexPath.row];
+    return cell;
 }
 
-- (void)testAlertCategory{
-    self.alertView = [[JKAlertView alloc]initWithTitle:@"title" message:@"message" delegate:self cancelButtonTitle:@"取消" otherButtonTitles:@"1",@"2",@"3",nil];
-    [self.alertView show];
-//    [self.alertView showAlertViewWithActionBlock:^(JKAlertView *newAlertView, NSInteger buttonIndex) {
-//        NSLog(@"%zd",buttonIndex);
-//        self.view.backgroundColor = [UIColor redColor];
-//        self.alertView.backgroundColor = [UIColor clearColor];
-//    }];
-    
-    [self performSelector:@selector(dismissWithClickedButtonIndex) withObject:nil afterDelay:2];
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath{
+    return 50;
 }
 
-- (void)dismissWithClickedButtonIndex{
-    [self.alertView dismissWithClickedButtonIndex:2 animated:YES];
-}
-
--(void)alertView:(JKAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex{
-    NSLog(@"%zd   %zd    %zd",buttonIndex,alertView.firstOtherButtonIndex,alertView.cancelButtonIndex);
-}
-
-
-
-- (void)testActionSheetCategory{
-    self.actionSheet = [[UIActionSheet alloc]initWithTitle:@"title" delegate:nil cancelButtonTitle:@"取消" destructiveButtonTitle:@"destructiveButtonTitle" otherButtonTitles:@"otherButtonTitles", nil];
-    [self.actionSheet showActionSheetInView:self.view completion:^(UIActionSheet *originalActionSheet, NSInteger buttonIndex) {
-        self.view.backgroundColor = [UIColor redColor];
-        self.alertView.backgroundColor = [UIColor clearColor];
-    }];
-}
 
 - (void)dealloc{
-    NSLog(@"ViewController 控制器已释放");
+    NSLog(@"%@被释放",[self class]);
 }
 
 @end

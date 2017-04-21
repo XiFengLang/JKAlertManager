@@ -1,8 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gAp-69-Phf">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="gAp-69-Phf">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -15,12 +18,62 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Xzx-mz-5LY"/>
+                        <segue destination="PUX-uV-CSQ" kind="relationship" relationship="rootViewController" id="ybA-BX-rZW"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cTd-0R-RGp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-426" y="403"/>
+            <point key="canvasLocation" x="-1150" y="394"/>
+        </scene>
+        <!--JKAlertManager-->
+        <scene sceneID="lTu-gI-VUr">
+            <objects>
+                <viewController id="PUX-uV-CSQ" customClass="LaunchViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Ln7-RX-w7P"/>
+                        <viewControllerLayoutGuide type="bottom" id="lKM-XO-4nI"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="aFr-XI-qEi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gna-9T-BX3">
+                                <rect key="frame" x="52.5" y="108" width="271" height="30"/>
+                                <state key="normal" title="JKAlertManager (使用UIAlertController)"/>
+                                <connections>
+                                    <segue destination="BYZ-38-t0r" kind="push" id="voS-z9-4bN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ouH-aE-Q73">
+                                <rect key="frame" x="63.5" y="156" width="249" height="30"/>
+                                <state key="normal" title="快速替换掉工程中所有的UIAlertView"/>
+                                <connections>
+                                    <segue destination="Yqz-ip-K3s" kind="push" id="6wm-ic-jgr"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vEU-nw-Qby">
+                                <rect key="frame" x="33.5" y="194" width="309" height="30"/>
+                                <state key="normal" title="封装UIAlertView、UIActionSheet的Block分类"/>
+                                <connections>
+                                    <segue destination="p7y-2s-Fh4" kind="push" id="iZZ-wX-vPF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vEU-nw-Qby" firstAttribute="top" secondItem="ouH-aE-Q73" secondAttribute="bottom" constant="8" id="82V-aA-tZd"/>
+                            <constraint firstItem="ouH-aE-Q73" firstAttribute="top" secondItem="gna-9T-BX3" secondAttribute="bottom" constant="18" id="Idn-dO-l6o"/>
+                            <constraint firstItem="vEU-nw-Qby" firstAttribute="centerX" secondItem="aFr-XI-qEi" secondAttribute="centerX" id="WFj-ce-Nam"/>
+                            <constraint firstItem="ouH-aE-Q73" firstAttribute="centerX" secondItem="aFr-XI-qEi" secondAttribute="centerX" id="sLH-ML-HwN"/>
+                            <constraint firstItem="gna-9T-BX3" firstAttribute="centerX" secondItem="aFr-XI-qEi" secondAttribute="centerX" id="wkJ-QZ-L8n"/>
+                            <constraint firstItem="gna-9T-BX3" firstAttribute="top" secondItem="Ln7-RX-w7P" secondAttribute="bottom" constant="44" id="x7s-lO-psv"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="JKAlertManager" id="ihx-2C-Oej"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sZH-5O-nnL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-426.39999999999998" y="394.45277361319341"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -34,8 +87,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G0N-Vy-Bov">
-                                <frame key="frameInset" width="600" height="600"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="G0N-Vy-Bov">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <connections>
                                     <outlet property="dataSource" destination="BYZ-38-t0r" id="utC-ue-wdP"/>
@@ -58,7 +111,89 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="257" y="403"/>
+            <point key="canvasLocation" x="292" y="-321"/>
+        </scene>
+        <!--Replace View Controller-->
+        <scene sceneID="eeZ-dM-Asc">
+            <objects>
+                <viewController id="Yqz-ip-K3s" customClass="ReplaceViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JWO-wv-O2G"/>
+                        <viewControllerLayoutGuide type="bottom" id="Z1p-dZ-9Dx"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="a9O-PO-icH">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Vcw-dW-cab">
+                                <rect key="frame" x="108.5" y="118" width="157" height="30"/>
+                                <state key="normal" title="使用原生的UIAlertView"/>
+                                <connections>
+                                    <action selector="orginalAlterView:" destination="Yqz-ip-K3s" eventType="touchUpInside" id="5uw-sY-vl7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Oe-RW-2DC">
+                                <rect key="frame" x="11" y="191" width="352" height="30"/>
+                                <state key="normal" title="用JKAlertView替换，使用封装过的UIAlertController"/>
+                                <connections>
+                                    <action selector="replacedAlertView:" destination="Yqz-ip-K3s" eventType="touchUpInside" id="Z7i-B5-Zjy"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="2Oe-RW-2DC" firstAttribute="top" secondItem="Vcw-dW-cab" secondAttribute="bottom" constant="43" id="C4J-jY-5OJ"/>
+                            <constraint firstItem="Vcw-dW-cab" firstAttribute="top" secondItem="JWO-wv-O2G" secondAttribute="bottom" constant="54" id="FtX-rs-O4g"/>
+                            <constraint firstItem="Vcw-dW-cab" firstAttribute="centerX" secondItem="a9O-PO-icH" secondAttribute="centerX" id="L4X-sr-SbQ"/>
+                            <constraint firstItem="2Oe-RW-2DC" firstAttribute="centerX" secondItem="a9O-PO-icH" secondAttribute="centerX" id="ODv-x4-t6h"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="AXU-8h-WWY"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="am2-5c-a9q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="292" y="393.55322338830587"/>
+        </scene>
+        <!--Block View Controller-->
+        <scene sceneID="hRX-K1-raf">
+            <objects>
+                <viewController id="p7y-2s-Fh4" customClass="BlockViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="HeW-op-lyn"/>
+                        <viewControllerLayoutGuide type="bottom" id="E4K-AF-LvW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="wJZ-zt-Cmh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pkl-t8-Ups">
+                                <rect key="frame" x="119.5" y="94" width="136" height="30"/>
+                                <state key="normal" title="UIAlertView + Block"/>
+                                <connections>
+                                    <action selector="testAlterView:" destination="p7y-2s-Fh4" eventType="touchUpInside" id="R5n-tH-RzW"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKu-e4-3L7">
+                                <rect key="frame" x="110.5" y="147" width="154" height="30"/>
+                                <state key="normal" title="UIActionSheet + Block"/>
+                                <connections>
+                                    <action selector="testActionSheet:" destination="p7y-2s-Fh4" eventType="touchUpInside" id="n9J-c6-2Ap"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="PKu-e4-3L7" firstAttribute="centerX" secondItem="wJZ-zt-Cmh" secondAttribute="centerX" id="4FJ-Nz-nrH"/>
+                            <constraint firstItem="pkl-t8-Ups" firstAttribute="centerX" secondItem="wJZ-zt-Cmh" secondAttribute="centerX" id="aUo-vZ-lcZ"/>
+                            <constraint firstItem="PKu-e4-3L7" firstAttribute="top" secondItem="pkl-t8-Ups" secondAttribute="bottom" constant="23" id="phz-9d-9FA"/>
+                            <constraint firstItem="pkl-t8-Ups" firstAttribute="top" secondItem="HeW-op-lyn" secondAttribute="bottom" constant="30" id="slk-PU-F7A"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="YDB-U2-KkW"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yag-hj-Af7" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="292" y="1090"/>
         </scene>
     </scenes>
 </document>
