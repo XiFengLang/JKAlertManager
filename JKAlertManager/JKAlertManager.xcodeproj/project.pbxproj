@@ -12,17 +12,19 @@
 		9F3E3BE71EA9D29D00220061 /* BlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E3BE61EA9D29D00220061 /* BlockViewController.m */; };
 		9F3E3BEE1EA9D83300220061 /* UIActionSheet+BlockExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E3BEA1EA9D83300220061 /* UIActionSheet+BlockExtension.m */; };
 		9F3E3BEF1EA9D83300220061 /* UIAlertView+BlockExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E3BED1EA9D83300220061 /* UIAlertView+BlockExtension.m */; };
-		9F98B6A81D65AFAB0039EC6F /* JKAlertView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F98B6A71D65AFAB0039EC6F /* JKAlertView.m */; };
 		9FFBC2391D5B27BE0040B061 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFBC2381D5B27BE0040B061 /* main.m */; };
 		9FFBC23C1D5B27BE0040B061 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFBC23B1D5B27BE0040B061 /* AppDelegate.m */; };
 		9FFBC23F1D5B27BE0040B061 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFBC23E1D5B27BE0040B061 /* ViewController.m */; };
 		9FFBC2421D5B27BE0040B061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFBC2401D5B27BE0040B061 /* Main.storyboard */; };
 		9FFBC2441D5B27BE0040B061 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FFBC2431D5B27BE0040B061 /* Assets.xcassets */; };
 		9FFBC2471D5B27BE0040B061 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFBC2451D5B27BE0040B061 /* LaunchScreen.storyboard */; };
-		9FFBC25C1D5C34DD0040B061 /* JKAlertManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 9FFBC25B1D5C34DD0040B061 /* JKAlertManager.m */; };
+		ED8F213320EF06A1002FA729 /* libPods-JKAlertManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8F213220EF06A1002FA729 /* libPods-JKAlertManager.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		030D2425F1312A7B94A872A6 /* Pods-JKAlertManager.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKAlertManager.release.xcconfig"; path = "Pods/Target Support Files/Pods-JKAlertManager/Pods-JKAlertManager.release.xcconfig"; sourceTree = "<group>"; };
+		38CCB840160D8FF5853730D3 /* libPods-JKAlertManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-JKAlertManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6D491BBDF05D9C14A2829152 /* Pods-JKAlertManager.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-JKAlertManager.debug.xcconfig"; path = "Pods/Target Support Files/Pods-JKAlertManager/Pods-JKAlertManager.debug.xcconfig"; sourceTree = "<group>"; };
 		9F3E3BDF1EA9D08900220061 /* LaunchViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaunchViewController.h; sourceTree = "<group>"; };
 		9F3E3BE01EA9D08900220061 /* LaunchViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaunchViewController.m; sourceTree = "<group>"; };
 		9F3E3BE21EA9D29500220061 /* ReplaceViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ReplaceViewController.h; sourceTree = "<group>"; };
@@ -33,8 +35,6 @@
 		9F3E3BEA1EA9D83300220061 /* UIActionSheet+BlockExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+BlockExtension.m"; sourceTree = "<group>"; };
 		9F3E3BEC1EA9D83300220061 /* UIAlertView+BlockExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIAlertView+BlockExtension.h"; sourceTree = "<group>"; };
 		9F3E3BED1EA9D83300220061 /* UIAlertView+BlockExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIAlertView+BlockExtension.m"; sourceTree = "<group>"; };
-		9F98B6A61D65AFAB0039EC6F /* JKAlertView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKAlertView.h; sourceTree = "<group>"; };
-		9F98B6A71D65AFAB0039EC6F /* JKAlertView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKAlertView.m; sourceTree = "<group>"; };
 		9FFBC2341D5B27BE0040B061 /* JKAlertManager.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = JKAlertManager.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9FFBC2381D5B27BE0040B061 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9FFBC23A1D5B27BE0040B061 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -45,8 +45,7 @@
 		9FFBC2431D5B27BE0040B061 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9FFBC2461D5B27BE0040B061 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FFBC2481D5B27BE0040B061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		9FFBC25A1D5C34DD0040B061 /* JKAlertManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JKAlertManager.h; sourceTree = "<group>"; };
-		9FFBC25B1D5C34DD0040B061 /* JKAlertManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JKAlertManager.m; sourceTree = "<group>"; };
+		ED8F213220EF06A1002FA729 /* libPods-JKAlertManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-JKAlertManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,12 +53,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ED8F213320EF06A1002FA729 /* libPods-JKAlertManager.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		9F140F4EFBEC63C6FD3A77FE /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6D491BBDF05D9C14A2829152 /* Pods-JKAlertManager.debug.xcconfig */,
+				030D2425F1312A7B94A872A6 /* Pods-JKAlertManager.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		9F3E3BE81EA9D83300220061 /* UIActionSheet+BlockExtension */ = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +92,8 @@
 			children = (
 				9FFBC2361D5B27BE0040B061 /* JKAlertManager */,
 				9FFBC2351D5B27BE0040B061 /* Products */,
+				9F140F4EFBEC63C6FD3A77FE /* Pods */,
+				E657FE096384870AF75DA45A /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -99,7 +110,6 @@
 			children = (
 				9F3E3BE81EA9D83300220061 /* UIActionSheet+BlockExtension */,
 				9F3E3BEB1EA9D83300220061 /* UIAlertView+BlockExtension */,
-				9FFBC2591D5C34DD0040B061 /* JKAlertManager */,
 				9FFBC23A1D5B27BE0040B061 /* AppDelegate.h */,
 				9FFBC23B1D5B27BE0040B061 /* AppDelegate.m */,
 				9F3E3BDF1EA9D08900220061 /* LaunchViewController.h */,
@@ -127,15 +137,13 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		9FFBC2591D5C34DD0040B061 /* JKAlertManager */ = {
+		E657FE096384870AF75DA45A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9FFBC25A1D5C34DD0040B061 /* JKAlertManager.h */,
-				9FFBC25B1D5C34DD0040B061 /* JKAlertManager.m */,
-				9F98B6A61D65AFAB0039EC6F /* JKAlertView.h */,
-				9F98B6A71D65AFAB0039EC6F /* JKAlertView.m */,
+				ED8F213220EF06A1002FA729 /* libPods-JKAlertManager.a */,
+				38CCB840160D8FF5853730D3 /* libPods-JKAlertManager.a */,
 			);
-			path = JKAlertManager;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -145,6 +153,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9FFBC24B1D5B27BE0040B061 /* Build configuration list for PBXNativeTarget "JKAlertManager" */;
 			buildPhases = (
+				1D8042F605049A55DD3B1CE9 /* [CP] Check Pods Manifest.lock */,
 				9FFBC2301D5B27BE0040B061 /* Sources */,
 				9FFBC2311D5B27BE0040B061 /* Frameworks */,
 				9FFBC2321D5B27BE0040B061 /* Resources */,
@@ -169,7 +178,7 @@
 				TargetAttributes = {
 					9FFBC2331D5B27BE0040B061 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = 756Y4UTJUH;
+						DevelopmentTeam = Y7H6F7S5DJ;
 					};
 				};
 			};
@@ -204,6 +213,27 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		1D8042F605049A55DD3B1CE9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-JKAlertManager-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9FFBC2301D5B27BE0040B061 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -213,8 +243,6 @@
 				9F3E3BE41EA9D29500220061 /* ReplaceViewController.m in Sources */,
 				9FFBC23C1D5B27BE0040B061 /* AppDelegate.m in Sources */,
 				9F3E3BE11EA9D08900220061 /* LaunchViewController.m in Sources */,
-				9FFBC25C1D5C34DD0040B061 /* JKAlertManager.m in Sources */,
-				9F98B6A81D65AFAB0039EC6F /* JKAlertView.m in Sources */,
 				9F3E3BEF1EA9D83300220061 /* UIAlertView+BlockExtension.m in Sources */,
 				9F3E3BE71EA9D29D00220061 /* BlockViewController.m in Sources */,
 				9F3E3BEE1EA9D83300220061 /* UIActionSheet+BlockExtension.m in Sources */,
@@ -283,7 +311,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -324,7 +352,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -334,11 +362,12 @@
 		};
 		9FFBC24C1D5B27BE0040B061 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6D491BBDF05D9C14A2829152 /* Pods-JKAlertManager.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 756Y4UTJUH;
+				DEVELOPMENT_TEAM = Y7H6F7S5DJ;
 				INFOPLIST_FILE = JKAlertManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -350,11 +379,12 @@
 		};
 		9FFBC24D1D5B27BE0040B061 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 030D2425F1312A7B94A872A6 /* Pods-JKAlertManager.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ANALYZER_NONNULL = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = 756Y4UTJUH;
+				DEVELOPMENT_TEAM = Y7H6F7S5DJ;
 				INFOPLIST_FILE = JKAlertManager/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

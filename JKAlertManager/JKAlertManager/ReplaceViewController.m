@@ -7,7 +7,7 @@
 //
 
 #import "ReplaceViewController.h"
-#import "JKAlertView.h"
+#import <JKAlertManager/JKAlertView.h>
 
 @interface ReplaceViewController () <JKAlertViewDelegate>
 
@@ -27,7 +27,7 @@
     [self showAlertView:[UIAlertView class]];
 }
 - (IBAction)replacedAlertView:(id)sender {
-    [self showAlertView:[JKAlertView class]];
+    [self showAlertView:JKAlertView.class];
 }
 
 - (void)showAlertView:(Class)class {
@@ -42,7 +42,7 @@
     
     
     /// 手动隐藏
-//    [self performSelector:@selector(dismissWithClickedButtonIndex) withObject:nil afterDelay:2];
+    [self performSelector:@selector(dismissWithClickedButtonIndex) withObject:nil afterDelay:2];
 }
 
 

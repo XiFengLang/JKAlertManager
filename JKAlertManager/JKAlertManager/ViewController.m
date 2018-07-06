@@ -7,9 +7,11 @@
 //
 
 #import "ViewController.h"
-#import "JKAlertManager.h"
+//#import <JKAlertManager/JKAlertManager.h>
 #import "UIAlertView+BlockExtension.h"
 #import "UIActionSheet+BlockExtension.h"
+
+#import "JKAlertManager.h"
 
 @interface ViewController ()
 @property (weak, nonatomic) IBOutlet UITableView *tableView;
@@ -55,114 +57,114 @@ NSString * const JKCellKey = @"UITableViewCellReuseKey";
     
     switch (indexPath.row) {
         case 0:{
-            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleAlert title:self.dataArray[indexPath.row] message:messgae ];
-            self.manager = manager;
-            [manager configueCancelTitle:nil destructiveIndex:1 otherTitle:@"其他按钮1",@"Destructive按钮",@"其他按钮2", nil];
-            [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
-                NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self.manager);
-                self.tableView.backgroundColor = [UIColor whiteColor];
-            }];
+//            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleAlert title:self.dataArray[indexPath.row] message:messgae ];
+//            self.manager = manager;
+//            [manager configueCancelTitle:nil destructiveIndex:1 otherTitle:@"其他按钮1",@"Destructive按钮",@"其他按钮2", nil];
+//            [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
+//                NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self.manager);
+//                self.tableView.backgroundColor = [UIColor whiteColor];
+//            }];
             
         }break;
             
             
         case 1:{
             
-            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleAlert title:self.dataArray[indexPath.row] message:messgae ];
-            self.manager = manager;
-            [manager configueCancelTitle:@"取消" destructiveIndex:JKAlertDestructiveIndexNone otherTitles:@[@"其他按钮0",@"其他按钮1",@"其他按钮2"]];
-            [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
-                NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self);
-                self.tableView.backgroundColor = [UIColor whiteColor];
-            }];
+//            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleAlert title:self.dataArray[indexPath.row] message:messgae ];
+//            self.manager = manager;
+//            [manager configueCancelTitle:@"取消" destructiveIndex:JKAlertDestructiveIndexNone otherTitles:@[@"其他按钮0",@"其他按钮1",@"其他按钮2"]];
+//            [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
+//                NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self);
+//                self.tableView.backgroundColor = [UIColor whiteColor];
+//            }];
         }break;
             
             
         case 2:{
             
-            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleAlert title:self.dataArray[indexPath.row] message:nil ];
-            self.manager = manager;
-            [manager configueCancelTitle:@"取消" destructiveIndex:1 otherTitle:@"其他按钮1",@"Destructive按钮",@"其他按钮2", nil];
-            [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
-                NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self);
-                self.tableView.backgroundColor = [UIColor whiteColor];
-            }];
+//            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleAlert title:self.dataArray[indexPath.row] message:nil ];
+//            self.manager = manager;
+//            [manager configueCancelTitle:@"取消" destructiveIndex:1 otherTitle:@"其他按钮1",@"Destructive按钮",@"其他按钮2", nil];
+//            [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
+//                NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self);
+//                self.tableView.backgroundColor = [UIColor whiteColor];
+//            }];
             
         }break;
             
         case 3:{
             
-            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleAlert title:self.dataArray[indexPath.row] message:self.dataArray[indexPath.row] ];
-            [manager configueCancelTitle:@"取消" destructiveIndex:1 otherTitle:@"其他按钮1",@"Destructive按钮",@"其他按钮2", nil];
-            [manager addTextFieldWithPlaceholder:@"请输入账号" secureTextEntry:NO ConfigurationHandler:nil textFieldTextChanged:nil];
-            [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
-                NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self);
-                self.tableView.backgroundColor = [UIColor whiteColor];
-            }];
+//            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleAlert title:self.dataArray[indexPath.row] message:self.dataArray[indexPath.row] ];
+//            [manager configueCancelTitle:@"取消" destructiveIndex:1 otherTitle:@"其他按钮1",@"Destructive按钮",@"其他按钮2", nil];
+//            [manager addTextFieldWithPlaceholder:@"请输入账号" secureTextEntry:NO ConfigurationHandler:nil textFieldTextChanged:nil];
+//            [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
+//                NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self);
+//                self.tableView.backgroundColor = [UIColor whiteColor];
+//            }];
             
         }break;
             
         case 4:{
             
-            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleAlert title:self.dataArray[indexPath.row] message:self.dataArray[indexPath.row] ];
-            self.manager = manager;
-            [manager configueCancelTitle:@"取消" destructiveIndex:1 otherTitle:@"其他按钮1",@"Destructive按钮",@"其他按钮2", nil];
-            [manager addTextFieldWithPlaceholder:@"请输入账号" secureTextEntry:NO ConfigurationHandler:nil textFieldTextChanged:nil];
-            [manager addTextFieldWithPlaceholder:@"请输入密码" secureTextEntry:YES ConfigurationHandler:^(UITextField *textField) {
-                textField.clearsOnBeginEditing = YES;
-            } textFieldTextChanged:^(UITextField *textField) {
-                NSLog(@"2   %@",textField.text);
-                self.view.backgroundColor = [UIColor whiteColor];
-            }];
-            [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
-                NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self);
-                
-                self.tableView.backgroundColor = [UIColor whiteColor];
-                UITextField * userNameTextField = tempAlertManager.textFields[0];
-                UITextField * passwordTextField = tempAlertManager.textFields[1];
-            }];
+//            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleAlert title:self.dataArray[indexPath.row] message:self.dataArray[indexPath.row] ];
+//            self.manager = manager;
+//            [manager configueCancelTitle:@"取消" destructiveIndex:1 otherTitle:@"其他按钮1",@"Destructive按钮",@"其他按钮2", nil];
+//            [manager addTextFieldWithPlaceholder:@"请输入账号" secureTextEntry:NO ConfigurationHandler:nil textFieldTextChanged:nil];
+//            [manager addTextFieldWithPlaceholder:@"请输入密码" secureTextEntry:YES ConfigurationHandler:^(UITextField *textField) {
+//                textField.clearsOnBeginEditing = YES;
+//            } textFieldTextChanged:^(UITextField *textField) {
+//                NSLog(@"2   %@",textField.text);
+//                self.view.backgroundColor = [UIColor whiteColor];
+//            }];
+//            [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
+//                NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self);
+//
+//                self.tableView.backgroundColor = [UIColor whiteColor];
+////                UITextField * userNameTextField = tempAlertManager.textFields[0];
+////                UITextField * passwordTextField = tempAlertManager.textFields[1];
+//            }];
             
         }break;
             
             
         case 5:{
             
-            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleActionSheet title:self.dataArray[indexPath.row] message:messgae ];
-            self.manager = manager;
-            [manager configueCancelTitle:nil destructiveIndex:2 otherTitle:@"其他按钮1",@"其他按钮2",@"Destructive按钮", nil];
-            [manager configuePopoverControllerForActionSheetStyleWithSourceView:cell sourceRect:cell.bounds popoverArrowDirection:UIPopoverArrowDirectionAny];
-            [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
-                NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self);
-                self.tableView.backgroundColor = [UIColor whiteColor];
-            }];
+//            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleActionSheet title:self.dataArray[indexPath.row] message:messgae ];
+//            self.manager = manager;
+//            [manager configueCancelTitle:nil destructiveIndex:2 otherTitle:@"其他按钮1",@"其他按钮2",@"Destructive按钮", nil];
+//            [manager configuePopoverControllerForActionSheetStyleWithSourceView:cell sourceRect:cell.bounds popoverArrowDirection:UIPopoverArrowDirectionAny];
+//            [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
+//                NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self);
+//                self.tableView.backgroundColor = [UIColor whiteColor];
+//            }];
             
         }break;
             
             
         case 6:{
             
-            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleActionSheet title:self.dataArray[indexPath.row] message:messgae];
-            self.manager = manager;
-            [manager configueCancelTitle:nil destructiveIndex:JKAlertDestructiveIndexNone otherTitle:@"其他按钮0",@"其他按钮1",@"其他按钮2", nil];
-            [manager configuePopoverControllerForActionSheetStyleWithSourceView:cell sourceRect:cell.bounds popoverArrowDirection:UIPopoverArrowDirectionAny];
-            [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
-                NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self);
-                self.tableView.backgroundColor = [UIColor whiteColor];
-            }];
+//            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleActionSheet title:self.dataArray[indexPath.row] message:messgae];
+//            self.manager = manager;
+//            [manager configueCancelTitle:nil destructiveIndex:JKAlertDestructiveIndexNone otherTitle:@"其他按钮0",@"其他按钮1",@"其他按钮2", nil];
+//            [manager configuePopoverControllerForActionSheetStyleWithSourceView:cell sourceRect:cell.bounds popoverArrowDirection:UIPopoverArrowDirectionAny];
+//            [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
+//                NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self);
+//                self.tableView.backgroundColor = [UIColor whiteColor];
+//            }];
             
         }break;
             
             
         case 7:{
             
-            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleActionSheet title:self.dataArray[indexPath.row] message:nil ];
-            self.manager = manager;
-            [manager configueCancelTitle:nil destructiveIndex:0 otherTitle:@"Destructive按钮",@"其他按钮1",@"其他按钮2", nil];
-            [manager configuePopoverControllerForActionSheetStyleWithSourceView:cell sourceRect:cell.bounds popoverArrowDirection:UIPopoverArrowDirectionAny];
-            [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
-                NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self);
-                self.tableView.backgroundColor = [UIColor whiteColor];
-            }];
+//            JKAlertManager * manager = [[JKAlertManager alloc] initWithPreferredStyle:UIAlertControllerStyleActionSheet title:self.dataArray[indexPath.row] message:nil ];
+//            self.manager = manager;
+//            [manager configueCancelTitle:nil destructiveIndex:0 otherTitle:@"Destructive按钮",@"其他按钮1",@"其他按钮2", nil];
+//            [manager configuePopoverControllerForActionSheetStyleWithSourceView:cell sourceRect:cell.bounds popoverArrowDirection:UIPopoverArrowDirectionAny];
+//            [manager showAlertFromController:self actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
+//                NSLog(@" %@, %ld  %@", actionTitle, actionIndex,self);
+//                self.tableView.backgroundColor = [UIColor whiteColor];
+//            }];
             
         }break;
         default:
