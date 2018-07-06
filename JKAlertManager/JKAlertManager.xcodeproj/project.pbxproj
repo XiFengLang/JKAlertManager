@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A9DCD228496D359A5A72799 /* libPods-JKAlertManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8F213220EF06A1002FA729 /* libPods-JKAlertManager.a */; };
 		9F3E3BE11EA9D08900220061 /* LaunchViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E3BE01EA9D08900220061 /* LaunchViewController.m */; };
 		9F3E3BE41EA9D29500220061 /* ReplaceViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E3BE31EA9D29500220061 /* ReplaceViewController.m */; };
 		9F3E3BE71EA9D29D00220061 /* BlockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9F3E3BE61EA9D29D00220061 /* BlockViewController.m */; };
@@ -55,6 +56,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ED8F213520EF0749002FA729 /* libJKAlertManager.a in Frameworks */,
+				7A9DCD228496D359A5A72799 /* libPods-JKAlertManager.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -13,6 +13,6 @@ target 'JKAlertManager' do
 
   # Pods for JKAlertManager
 
-pod 'JKAlertManager','~> 1.2.0'
+pod 'JKAlertManager','~> 1.2.1'
 
 end

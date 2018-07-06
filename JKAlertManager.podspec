@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
 
   s.name         = "JKAlertManager"
-  s.version      = "1.2.0"
+  s.version      = "1.2.1"
   s.summary      = "深度封装UIAlertController,良好兼容UIAlertControllerStyleAlert和UIAlertControllerStyleActionSheet"
   s.homepage     = "https://github.com/XiFengLang/JKAlertManager"
   
