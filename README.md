@@ -5,6 +5,16 @@ JKAlertManager
 
 JKAlertManager是基于UIAlertController封装的管理类，将UIAlertController分散的ActionBlcok集中到一个Blcok中，并且实现主动释放的Block，内存管理更安全，代码精简高效。
 
+## CocoaPods 
+
+```C
+platform :ios, '9.0'
+
+source 'https://github.com/CocoaPods/Specs.git'
+
+pod 'JKAlertManager', '~> 1.2.1'
+```
+
 
 ## 目录
 

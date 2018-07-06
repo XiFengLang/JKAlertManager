@@ -1,16 +1,16 @@
 PODS:
-  - JKAlertManager (1.2.0)
+  - JKAlertManager (1.2.1)
 
 DEPENDENCIES:
-  - JKAlertManager (~> 1.2.0)
+  - JKAlertManager (~> 1.2.1)
 
 SPEC REPOS:
   https://github.com/cocoapods/specs.git:
     - JKAlertManager
 
 SPEC CHECKSUMS:
-  JKAlertManager: 150d0752103873d13da9d46a25c2e4a9605c8834
+  JKAlertManager: 40b1cdafc6820ab7afc58f7c5ae8a6b6dcd73899
 
-PODFILE CHECKSUM: de61b5c9c28f2a4950c75e9ba43f3669f0e42664
+PODFILE CHECKSUM: 398b4572aa5351b2fb8cf8ba719e10198e5bf777
 
 COCOAPODS: 1.5.3
