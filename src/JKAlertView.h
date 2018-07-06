@@ -33,5 +33,5 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (void)show;
 - (void)dismissWithClickedButtonIndex:(NSInteger)buttonIndex animated:(BOOL)animated;
-NS_ASSUME_NONNULL_END
 @end
+NS_ASSUME_NONNULL_END
