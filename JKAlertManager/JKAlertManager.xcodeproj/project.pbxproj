@@ -18,7 +18,7 @@
 		9FFBC2421D5B27BE0040B061 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFBC2401D5B27BE0040B061 /* Main.storyboard */; };
 		9FFBC2441D5B27BE0040B061 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9FFBC2431D5B27BE0040B061 /* Assets.xcassets */; };
 		9FFBC2471D5B27BE0040B061 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9FFBC2451D5B27BE0040B061 /* LaunchScreen.storyboard */; };
-		ED8F213320EF06A1002FA729 /* libPods-JKAlertManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8F213220EF06A1002FA729 /* libPods-JKAlertManager.a */; };
+		ED8F213520EF0749002FA729 /* libJKAlertManager.a in Frameworks */ = {isa = PBXBuildFile; fileRef = ED8F213420EF0749002FA729 /* libJKAlertManager.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -46,6 +46,7 @@
 		9FFBC2461D5B27BE0040B061 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		9FFBC2481D5B27BE0040B061 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		ED8F213220EF06A1002FA729 /* libPods-JKAlertManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = "libPods-JKAlertManager.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED8F213420EF0749002FA729 /* libJKAlertManager.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; path = libJKAlertManager.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,7 +54,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				ED8F213320EF06A1002FA729 /* libPods-JKAlertManager.a in Frameworks */,
+				ED8F213520EF0749002FA729 /* libJKAlertManager.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,6 +141,7 @@
 		E657FE096384870AF75DA45A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				ED8F213420EF0749002FA729 /* libJKAlertManager.a */,
 				ED8F213220EF06A1002FA729 /* libPods-JKAlertManager.a */,
 				38CCB840160D8FF5853730D3 /* libPods-JKAlertManager.a */,
 			);
@@ -173,7 +175,7 @@
 		9FFBC22C1D5B27BE0040B061 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0820;
+				LastUpgradeCheck = 0940;
 				ORGANIZATIONNAME = "蒋鹏";
 				TargetAttributes = {
 					9FFBC2331D5B27BE0040B061 = {
@@ -281,14 +283,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
@@ -328,14 +338,22 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
