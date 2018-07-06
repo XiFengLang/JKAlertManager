@@ -1,0 +1,1 @@
+../../../JKAlertManager/src/JKAlertManager.h
