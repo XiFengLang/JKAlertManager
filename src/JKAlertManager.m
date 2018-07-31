@@ -72,6 +72,7 @@ typedef void(^JKAlertManagerBlock)(NSInteger actionIndex, NSString * actionTitle
         while ((actionTitle = va_arg(argList, NSString*))) {
             [otherTitles addObject:actionTitle];
         }
+        va_end(argList);
     }
     [self configueCancelTitle:cancelTitle destructiveIndex:destructiveIndex otherTitles:otherTitles];
 }
