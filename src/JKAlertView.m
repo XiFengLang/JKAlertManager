@@ -9,10 +9,15 @@
 #import "JKAlertView.h"
 #import "JKAlertManager.h"
 
-@implementation JKAlertView{
-    JKAlertManager * _manager;
-    NSString * _cancelButtonTitle;
-}
+@interface JKAlertView ()
+
+@property (nonatomic, strong) JKAlertManager * manager;
+@property (nonatomic, copy) NSString * cancelButtonTitle;
+
+@end
+
+
+@implementation JKAlertView
 
 - (instancetype)initWithTitle:(NSString *)title message:(NSString *)message delegate:(id)delegate cancelButtonTitle:(NSString *)cancelButtonTitle otherButtonTitles:(NSString *)otherButtonTitles, ...NS_REQUIRES_NIL_TERMINATION{
     if(self = [super initWithFrame:CGRectZero]){
@@ -53,10 +58,10 @@
 
 - (void)show{
     [self.keyWindow addSubview:self];
-    [_manager showAlertFromController:self.currentViewController actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
+    [self.manager showAlertFromController:self.currentViewController actionBlock:^(JKAlertManager *tempAlertManager, NSInteger actionIndex, NSString *actionTitle) {
         
         
-        BOOL hasCancelButtonTitle = _cancelButtonTitle ? 1 : 0;
+        BOOL hasCancelButtonTitle = self.cancelButtonTitle ? 1 : 0;
         NSInteger buttonIndex = actionIndex + hasCancelButtonTitle;
         if(actionIndex == tempAlertManager.cancelIndex){
             buttonIndex = 0;
